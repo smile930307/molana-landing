@@ -1,0 +1,157 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Red+Hat+Display:wght@400;700&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+@import './common';
+@import './normalize';
+@import './mixins';
+@import './variables';
+@import './themes';
+
+@import './icons';
+@import './popups';
+@import './containers';
+@import './buttons';
+@import './checkboxes';
+@import './containers';
+@import './icons';
+@import './badges';
+
+@import './topNav';
+@import './mobileNav';
+@import './userBanner';
+@import './communityBanner';
+@import './topNav';
+@import './footer';
+@import './userBanner';
+@import './goTopButton';
+
+@import './homepage';
+@import './userpage';
+@import './homeCarousel';
+@import './admin';
+@import './tradelist';
+@import './trading';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include theme-aware('background-color', 'color-white');
+  @include theme-aware('color', 'color-primary-shade');
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.nextArraw {
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Red Hat Display';
+  @include theme-aware('color', 'color-primary');
+}
+
+a {
+  @include theme-aware('color', 'color-primary');
+  transition: color 0.5s;
+
+  &:hover {
+    color: black;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    width: 1120px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1290px;
+    margin: auto;
+  }
+}
+
+@media (min-width: ($bp-phone + 1)) and (max-width: 1279px) {
+  .container {
+    width: calc(100% - 60px);
+    margin: auto;
+  }
+}
+
+@media (max-width: $bp-phone) {
+  .container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: ($bp-phone + 1)) {
+  .mobile--only,
+  .tablet--hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: ($bp-tablet + 1)) {
+  .tablet--only {
+    display: none !important;
+  }
+}
+
+@media (max-width: $bp-phone) {
+  .mobile--hidden {
+    display: none !important;
+  }
+}
+
+.unloc--logo--mobile {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+  z-index: -1;
+
+  a {
+    width: 100%;
+    height: 180px !important;
+    display: block;
+    transform: scale(0.7);
+
+    span {
+      height: 200px !important;
+      width: 100% !important;
+
+      span {
+        height: 100% !important;
+        width: 40% !important;
+
+        :first-child {
+          position: relative !important;
+        }
+      }
+    }
+  }
+}

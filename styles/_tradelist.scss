@@ -1,0 +1,38 @@
+.item-trade {
+  border: 2px solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+
+  .item-trade-row {
+    margin-bottom: 5px;
+    grid: 30px / auto auto auto auto auto auto;
+
+    > label {
+      margin-left: 10px;
+      margin-right: 5px;
+      text-align-last: end;
+    }
+
+    > span {
+      text-align-last: left;
+    }
+  }
+
+  .item-trade-row-flex {
+    display: flex;
+    margin-bottom: 3px;
+
+    > label {
+      flex: 1 1 0;
+      text-align-last: end;
+      margin-right: 10px;
+    }
+
+    > span {
+      flex: 3 3 0;
+      text-align-last: start;
+    }
+  }
+}

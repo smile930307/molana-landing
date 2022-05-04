@@ -1,0 +1,128 @@
+.user-banner {
+  @include theme-aware('border-color', 'color-primary-shade');
+  position: relative;
+  width: 100%;
+  border: 2px solid;
+  border-radius: 18px;
+  padding: $mr-lg $mr-xl;
+
+  @media (min-width: ($bp-tablet + 1)) {
+    display: inline-flex;
+    justify-content: space-between;
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .toggle {
+      display: none;
+    }
+  }
+
+  @media (max-width: $bp-tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__buttons {
+      width: 100%;
+      margin-top: $mr-sm;
+      display: inline-flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__container:not(.toggle),
+    &__buttons:not(.toggle) {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: $mr-sm;
+    right: $mr-sm;
+
+    @media (max-width: $bp-phone) {
+      &.icon--toggle {
+        background-image: url('/icons/caret-down.svg') !important;
+      }
+
+      &:not(.icon--toggle) {
+        background-image: url('/icons/caret-up.svg') !important;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      @media (max-width: $bp-phone) {
+        align-items: center;
+      }
+    }
+
+    &__user-name {
+      @media (min-width: ($bp-phone + 1)) {
+        font-size: $tp-2xl;
+      }
+
+      @media (max-width: $bp-phone) {
+        font-size: $tp-xl;
+        text-align: center;
+      }
+
+      span {
+        font-weight: $wg-hv;
+      }
+    }
+
+    &__wallet-status {
+      font-size: $tp-md;
+
+      @media (max-width: $bp-phone) {
+        margin-bottom: $mr-sm;
+      }
+
+      span {
+        font-weight: $wg-hv;
+      }
+    }
+
+    &__unloc-id {
+      line-height: 25px;
+      margin-top: 0;
+      margin-bottom: $mr-lg;
+    }
+  }
+
+  &__buttons {
+    button {
+      margin-bottom: $mr-md;
+
+      @media (min-width: ($bp-phone + 1)) and (max-width: ($bp-tablet)) {
+        width: calc(50% - $mr-sm);
+      }
+
+      @media (max-width: $bp-phone) {
+        width: 100%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__verify-btn {
+    margin: auto;
+  }
+}

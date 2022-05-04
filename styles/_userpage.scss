@@ -1,0 +1,20 @@
+.user {
+  > div {
+    margin-bottom: $mr-lg;
+  }
+
+  &__history,
+  &__offers {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__offers .offer {
+    display: flex;
+    flex-direction: column;
+
+    &__data {
+      display: inline-flex;
+    }
+  }
+}

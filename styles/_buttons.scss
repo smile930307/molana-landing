@@ -1,0 +1,88 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $tp-md;
+  font-weight: $wg-hv;
+  border-radius: 0;
+  border: 1px solid;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn--bold {
+  border: 2px solid;
+}
+
+.btn--selected {
+  border: none;
+}
+
+.btn--dark {
+  @include theme-aware('border-color', 'color-primary-shade');
+  @include theme-aware('background-color', 'color-primary-shade');
+  @include theme-aware('color', 'color-white');
+}
+
+.btn--light {
+  @include theme-aware('border-color', 'color-primary-shade');
+  @include theme-aware('color', 'color-primary-shade');
+  background-color: transparent;
+}
+
+.btn--magenta {
+  @include theme-aware('border-color', 'color-secondary');
+  @include theme-aware('background-color', 'color-secondary');
+  @include theme-aware('color', 'color-white');
+}
+
+.btn--blue {
+  @include theme-aware('border-color', 'color-primary');
+  @include theme-aware('background-color', 'color-primary');
+  @include theme-aware('color', 'color-white');
+}
+
+.btn--white--filled {
+  @include theme-aware('color', 'color-primary');
+  @include theme-aware('background-color', 'color-white');
+  border: none;
+}
+
+.btn--white {
+  @include theme-aware('border-color', 'color-white');
+  @include theme-aware('color', 'color-white');
+  background-color: transparent;
+}
+
+.btn--solana-explorer {
+  padding-left: $mr-sm;
+  font-weight: $wg-lt;
+  width: max-content;
+}
+
+.btn--tn {
+  width: 80px;
+  border-radius: 2px;
+  justify-content: space-between;
+  padding: $mr-tn;
+}
+
+.btn--sm {
+  width: 180px;
+  height: 54px;
+  border-radius: 4px;
+}
+
+.btn--md {
+  width: 100%;
+  height: 54px;
+}
+
+.btn--lg {
+  width: 100%;
+  height: 100%;
+}
+
+.btn--rounded {
+  border-radius: $mr-tn;
+}

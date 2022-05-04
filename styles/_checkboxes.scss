@@ -1,0 +1,18 @@
+.checkbox {
+  @include theme-aware('border-color', 'color-gray-3');
+  cursor: pointer;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox--sm {
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox--selected {
+  @include theme-aware('background-color', 'color-gray-3');
+  @include theme-aware('color', 'color-white');
+}

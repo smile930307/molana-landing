@@ -1,0 +1,15 @@
+.badge {
+  @include theme-aware('color', 'color-white');
+  text-transform: uppercase;
+  border-radius: 12px;
+  font-size: $tp-sm;
+  font-weight: $wg-sh;
+}
+
+.badge--success {
+  @include theme-aware('background-color', 'color-badge--success');
+}
+
+.badge--failure {
+  @include theme-aware('background-color', 'color-badge--failure');
+}

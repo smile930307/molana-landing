@@ -1,0 +1,11 @@
+.go-top-button {
+  position: fixed;
+  bottom: $mr-md;
+  right: $mr-md;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 4px 10px rgba($color: #000000, $alpha: 0.4);
+  @include theme-aware('background-color', 'color-primary');
+}

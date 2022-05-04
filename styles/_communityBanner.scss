@@ -1,0 +1,79 @@
+.community-banner {
+  width: $pg-col;
+  height: 263px;
+  background: url('/community_banner-bg.png');
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: $mr-sm;
+  padding: 0 $mr-2xl 0 $mr-2xl;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span:first-child {
+      font-size: $tp-xl;
+    }
+
+    span:last-child {
+      font-size: $tp-3xl-mb;
+    }
+
+    span {
+      @include theme-aware('color', 'color-white');
+      font-weight: $wg-hv;
+      font-family: 'Red Hat Display';
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__btn {
+      @include theme-aware('color', 'color-white');
+      font-weight: $wg-hv;
+      font-size: $tp-md;
+      text-decoration: none;
+
+      span {
+        margin-left: $mr-tn;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-phone) {
+  .community-banner {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/community_banner-bg-mobile.png');
+    background-size: cover;
+    flex-direction: column;
+    width: 90%;
+    height: 585px;
+    margin: auto;
+    align-items: center;
+    padding: $mr-xl;
+    margin-bottom: $mr-xl;
+
+    &__header {
+      span:first-child {
+        font-size: 10vw !important;
+      }
+
+      span:last-child {
+        font-size: 14vw !important;
+      }
+    }
+
+    &__buttons {
+      margin-top: $mr-md;
+      height: 100%;
+      justify-content: space-evenly;
+    }
+  }
+}

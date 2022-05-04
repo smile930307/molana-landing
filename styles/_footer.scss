@@ -1,0 +1,172 @@
+.footer {
+  @include theme-aware('border-color', 'color-gray-7');
+  border-top: 2px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: $mr-md;
+  padding-top: 60px;
+  background-color: black;
+
+  &__logo {
+    height: 100px;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.15);
+  }
+
+  &__form {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    button {
+      outline: none;
+      border: none;
+      margin: 0;
+      background: linear-gradient(to right, #9a47ff, #13f195);
+      // background: linear-gradient(0deg, rgba(1, 94, 234, 1) 0%, rgba(0, 192, 250, 1) 100%);
+      @include theme-aware('color', 'color-white');
+      font-weight: 400;
+      border-radius: $brd-rds-sm;
+      padding: 15px;
+      width: 100%;
+      cursor: pointer;
+      transition: box-shadow 0.5s ease-in-out;
+
+      &:hover {
+        // box-shadow: 0px 0px 16px 0px rgba(97, 59, 161, 1);
+        background: linear-gradient(to left, #9a47ff, #13f195);
+      }
+    }
+
+    form > input,
+    textarea {
+      padding: calc($mr-tn * 2);
+      font-weight: 400;
+      border-radius: $brd-rds-sm;
+      padding: 15px;
+      width: 100%;
+      @include theme-aware('border-color', 'color-gray-7');
+      border: 1px solid;
+      box-sizing: border-box;
+      margin-bottom: $mr-md;
+    }
+
+    span {
+      font-style: normal;
+      font-weight: $wg-hv;
+      font-size: $tp-md;
+      margin-bottom: $mr-sm;
+    }
+  }
+
+  &__nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    // padding-right: 25px;
+
+    &__column {
+      margin-left: 1vw;
+      display: flex;
+      flex-direction: column;
+
+      div {
+        margin-top: $mr-sm;
+      }
+
+      a {
+        @include theme-aware('color', 'color-primary-shade');
+        font-size: $tp-md;
+        font-weight: $wg-lt;
+        margin-top: $mr-sm;
+        text-decoration: none;
+        width: max-content;
+      }
+
+      span {
+        @include theme-aware('color', 'color-primary-shade');
+        font-size: $tp-md;
+        font-weight: $wg-hv;
+      }
+    }
+  }
+}
+
+.logo-solana {
+  display: flex;
+  flex-direction: row;
+
+  &__powered-by {
+    font-size: $tp-sm;
+    font-weight: $wg-lt;
+    @include theme-aware('color', 'color-gray-3');
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .footer__nav {
+    padding-right: $mr-xl !important;
+  }
+}
+
+@media (min-width: ($bp-phone + 1)) and (max-width: 900px) {
+  .footer__form {
+    width: 25% !important;
+    margin-left: -1vw;
+  }
+}
+
+@media (max-width: $bp-phone) {
+  .logo-solana {
+    display: flex;
+    flex-direction: row;
+
+    &__powered-by {
+      font-size: 2.2vw !important;
+      font-weight: $wg-lt;
+      @include theme-aware('color', 'color-gray-3');
+      margin-right: 5px;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+
+    &__form {
+      margin-top: $mr-xl;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__logo {
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      transform: scale(1.8);
+      height: 10vw;
+      width: 30vw;
+    }
+
+    &__nav {
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      width: auto !important;
+
+      &__column {
+        margin-top: $mr-xl;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+    }
+  }
+}
